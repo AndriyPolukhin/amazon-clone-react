@@ -1,9 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
-function App() {
-  return <div className="App">Hello there</div>;
-}
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/checkout">
+            <h1>Checkout</h1>
+          </Route>
+          <Route path="/login">
+            <h1>Login</h1>
+          </Route>
+          {/* This is the default route, should be last */}
+          <Route path="/">
+            <h1>Home</h1>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
