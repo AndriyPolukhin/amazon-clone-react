@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
+import Header from './components/Header';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           </Route>
           {/* This is the default route, should be last */}
           <Route path="/">
+            <Header />
             <h1>Home</h1>
           </Route>
         </Switch>

@@ -1,13 +1,50 @@
 import React from 'react';
+import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div>
-      {/*  logo on the left -> img */}
-      {/*  search box */}
-      {/* 3 links on the right */}
-      {/* Basket icon with number of items in the basket */}
-    </div>
+    <nav className="header">
+      <Link to="/">
+        <img
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt=""
+          className="header__logo"
+        />
+      </Link>
+      <div className="header__search">
+        <input type="text" className="header__searchInput" />
+        <SearchIcon className="header__searchIcon" />
+      </div>
+      <div className="header__nav">
+        <Link to="/login" className="header__link">
+          <div className="header__option">
+            <span className="header__optionLineOne">Hello Andriy</span>
+            <span className="header__optionLineTwo">Sign In</span>
+          </div>
+        </Link>
+        <Link to="/" className="header__link">
+          <div className="header__option">
+            <span className="header__optionLineOne">Returns</span>
+            <span className="header__optionLineTwo">& Orders</span>
+          </div>
+        </Link>
+        <Link to="/" className="header__link">
+          <div className="header__option">
+            <span className="header__optionLineOne">Your</span>
+            <span className="header__optionLineTwo">Prime</span>
+          </div>
+        </Link>
+        <Link to="/checkout" className="header__link">
+          <div className="header__optionBasket">
+            <ShoppingBasketIcon className="header__shoppingBasketIcon" />
+            <span className="header__optionLineTwo header__basketCount">0</span>
+          </div>
+        </Link>
+      </div>
+    </nav>
   );
 };
 
