@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
+import Checkout from './components/Checkout';
 import Header from './components/Header';
+import Home from './components/Home';
 
 const App = () => {
   return (
@@ -10,7 +12,8 @@ const App = () => {
       <div className="App">
         <Switch>
           <Route path="/checkout">
-            <h1>Checkout</h1>
+            <Header />
+            <Checkout />
           </Route>
           <Route path="/login">
             <h1>Login</h1>
@@ -18,7 +21,7 @@ const App = () => {
           {/* This is the default route, should be last */}
           <Route path="/">
             <Header />
-            <h1>Home</h1>
+            <Home />
           </Route>
         </Switch>
       </div>
